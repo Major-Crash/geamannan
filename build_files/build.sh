@@ -12,8 +12,24 @@ cp -avf "/ctx/system_files"/. /
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
+CUSTOM_PACKAGES=(
+    niri
+    dms
+    plasma-oxygen
+    oxygen-icon-theme
+    plasma-union
+    dankcalendar-git
+    qt6ct-kde
+    mako
+    swaybg
+    swayidle
+)
+
+dnf5 -y copr enable avengemedia/dms
+dnf5 -y copr enable yalter/niri fedora-44-x86_64
+dnf5 -y install "${CUSTOM_PACKAGES[@]}"
+dnf5 -y copr disable avengemedia/dms
+dnf5 -y copr disable yalter/niri
 
 # Use a COPR Example:
 #
