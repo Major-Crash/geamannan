@@ -28,7 +28,7 @@ CUSTOM_PACKAGES=(
 dnf5 -y copr enable avengemedia/dms-git
 dnf5 -y copr enable yalter/niri fedora-44-x86_64
 dnf5 -y install "${CUSTOM_PACKAGES[@]}"
-dnf5 -y copr disable avengemedia/dms
+dnf5 -y copr disable avengemedia/dms-git
 dnf5 -y copr disable yalter/niri
 # dnf5 -y downgrade realtek-firmware-0:20260622-1.fc44.noarch
 
