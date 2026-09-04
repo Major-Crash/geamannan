@@ -35,7 +35,8 @@ for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr enable "$repo"
 done
 
-dnf5 -y install "${CUSTOM_PACKAGES[@]}"
+dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
+dnf5 -y --refresh reinstall quickshell
 
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr disable "$repo"
