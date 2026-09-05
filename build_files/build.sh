@@ -14,7 +14,7 @@ cp -avf "/ctx/system_files"/. /
 
 CUSTOM_PACKAGES=(
     niri
-    dms
+    dms-1.5.3-1.fc44
     plasma-oxygen
     oxygen-icon-theme
     plasma-union
@@ -36,7 +36,6 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
-dnf5 -y --refresh reinstall quickshell
 
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr disable "$repo"
