@@ -14,7 +14,7 @@ cp -avf "/ctx/system_files"/. /
 
 CUSTOM_PACKAGES=(
     niri
-    dms-0:1.5.3-1.fc44.x86_64
+    dms
     plasma-oxygen
     oxygen-icon-theme
     plasma-union
