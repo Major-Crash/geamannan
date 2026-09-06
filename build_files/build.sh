@@ -37,7 +37,7 @@ done
 
 dnf5 -y --refresh update
 dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
-dnf5 -y --allowerasing pipewire-media-session
+dnf5 -y install --allowerasing pipewire-media-session
 
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr disable "$repo"
