@@ -14,21 +14,11 @@ cp -avf "/ctx/system_files"/. /
 
 CUSTOM_PACKAGES=(
     niri
-    dms
-    plasma-oxygen
-    oxygen-icon-theme
-    plasma-union
-    dankcalendar-git
-    qt6ct-kde
-    mako
-    swaybg
-    swayidle
+    noctalia
 )
 
 COPR_REPOS=(
-    avengemedia/danklinux
     yalter/niri
-    avengemedia/dms
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -36,6 +26,8 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
+dnf5 -y remove mako swaybg swayidle
+
 
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr disable "$repo"
