@@ -15,6 +15,7 @@ cp -avf "/ctx/system_files"/. /
 CUSTOM_PACKAGES=(
     niri
     noctalia
+    luciole-nightly
 )
 
 COPR_REPOS=(
@@ -27,7 +28,6 @@ done
 
 dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
 dnf5 -y remove mako swaybg swayidle
-
 
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr disable "$repo"
