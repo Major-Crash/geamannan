@@ -25,6 +25,7 @@ COPR_REPOS=(
 for repo in "${COPR_REPOS[@]}"; do
     dnf5 -y copr enable "$repo"
 done
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
 
 dnf5 -y --refresh install "${CUSTOM_PACKAGES[@]}"
 dnf5 -y remove mako swaybg swayidle
